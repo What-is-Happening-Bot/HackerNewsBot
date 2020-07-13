@@ -1,0 +1,8 @@
+{
+“name”: “hackernews-bot”,
+“version”: “1.0.0”,
+“description”: “Hacker News bot for Discord”,
+“main”: “bot.js”,
+“author”: “Phil Kim, Sunny Mo, Ricardo Rodriguez”,
+“dependencies”: {}
+}
