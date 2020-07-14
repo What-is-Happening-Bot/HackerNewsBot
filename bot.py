@@ -3,14 +3,19 @@ import os
 
 import discord
 from dotenv import load_dotenv
+from discord.ext import commands
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-client = discord.Client()
+actions = commands.Bot(command_prefix= '!')
 
-@client.event
+@actions.event
 async def on_ready():
-    print(f'{client.user} has connected to Discord!')
+    print(f'{actions.user} has connected to Discord!')
 
-client.run(TOKEN)
+for filename in os.listdir('./actions'):
+    if filename.endswith('.py') and filename != '__init__.py':
+        actions.load_extension(f'actions.{filename[:-3]}')
+
+actions.run(TOKEN)
