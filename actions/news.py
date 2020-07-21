@@ -14,16 +14,16 @@ class HackerNews(commands.Cog):
     ITEM_ID = []
 
     async with ctx.channel.typing():
-      async with aiohttp.ClientSession() as session:
-        async with session.get(
-          BASE_URL + TOP_STORIES + '.json?print=pretty') as top_ids:
+      # async with aiohttp.ClientSession() as session:
+      #   async with session.get(
+      #     BASE_URL + TOP_STORIES + '.json?print=pretty') as top_ids:
 
-          data = await top_ids.json()
+      #     data = await top_ids.json()
 
-          count = 0
-          while count < 100:
-            ITEM_ID.append(data[count])
-            count += 1
+      #     count = 0
+      #     while count < 100:
+      #       ITEM_ID.append(data[count])
+      #       count += 1
 
           # print(ITEM_ID)
 
