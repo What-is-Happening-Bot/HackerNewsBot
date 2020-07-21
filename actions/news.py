@@ -8,7 +8,9 @@ class HackerNews(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 
-  @commands.command(pass_context = True)
+  @commands.command(pass_context = True, 
+  brief= 'Type in \'!help news\' to learn how to use the command',
+  usage= '[jobstories, newstories, topstories, beststories, showstories] [your_topic]')
   async def news(self, ctx, *args):
     if len(args)!=2:
       await ctx.send("Please input both item type and topic")
