@@ -17,11 +17,12 @@ class HackerNews(commands.Cog):
     else: 
       async with ctx.channel.typing():
         BASE_URL = 'https://hacker-news.firebaseio.com/v0/'
+        await ctx.send("Here you go...")
         getTypeInstance = getType()
         typeIds = await getTypeInstance.get_stories(args[0].lower(), BASE_URL)
         getFirstThreeInstance = getFirstThree()
-        threeIds = await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL)
-        await ctx.send("Here you go...")
+        await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL)
+        
     
 def setup(bot):
   bot.add_cog(HackerNews(bot))

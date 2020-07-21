@@ -1,6 +1,11 @@
 import aiohttp
 import discord
 
+
+# Accesses the item, which is possible since the ID of the item is passed in
+# Returns an embed that displays the caller's name and three news articles that
+# pertains to the user's preference.
+
 class getFirstThree():
   async def firstThree(self, ctx, idList, BASE_URL):
     curr_res = 0
