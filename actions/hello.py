@@ -5,10 +5,10 @@ class Hello(commands.Cog):
     self.bot = bot
 
   # Simple test command to help us get used to commands in the module.
-  @commands.command()
+  @commands.command(pass_context = True)
   async def hello(self, ctx):
     print('!hello command was called')
-    await ctx.send('Hello! ヾ(•ω•`)o')
+    await ctx.send('Hello! ヾ(•ω•`)o ' + str(ctx.message.author))
   
 
   # This command is to help us get used to taking in arguments from the user.
