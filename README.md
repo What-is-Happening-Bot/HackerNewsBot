@@ -1,6 +1,4 @@
-# HackerNewsBot for Discord (working title)
-**Potential Titles:**
-* Hackernews HawkerBot (?)
+# Hackernews Hawker Bot
 
 Collaborating to build a Discord bot that makes news recommendations from HackerNews **(working description)**  
 We are using [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) and the [HackerNews API](https://github.com/HackerNews/API) to achieve this goal.
