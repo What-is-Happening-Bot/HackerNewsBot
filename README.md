@@ -1,5 +1,7 @@
 # Hackernews Hawker Bot
 
+**Created by:** [Phil Kim](https://github.com/socolorphil), [Ricardo Rodriguez](https://github.com/RicardoR22), [Xiangmin Mo](https://github.com/mxmsunny)
+
 Collaborating to build a Discord bot that makes news recommendations from HackerNews **(working description)**  
 We are using [discord.py](https://discordpy.readthedocs.io/en/latest/index.html) and the [HackerNews API](https://github.com/HackerNews/API) to achieve this goal.
 Because of this:
