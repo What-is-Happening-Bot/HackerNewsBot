@@ -26,7 +26,7 @@ class HackerNews(commands.Cog):
         BASE_URL = 'https://hacker-news.firebaseio.com/v0/'
         await ctx.send("Here you go...")
         getTypeInstance = getType()
-        typeIds = await getTypeInstance.get_stories(news_arg, BASE_URL) # this needs to have topic_arg as well
+        typeIds = await getTypeInstance.get_stories(news_arg, BASE_URL)
         getFirstThreeInstance = getFirstThree()
         await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL, news_arg, topic_arg)
     
@@ -40,8 +40,7 @@ class HackerNews(commands.Cog):
     brief= 'Displays the available search topics'
   )
   async def topics(self, ctx):
-    availTerms = similarTerms.keys()
-    finalTopics = ', '.join(availTerms)
+    finalTopics = ', '.join(similarTerms)
     await ctx.send("```"+finalTopics+"```")
 
 def setup(bot):

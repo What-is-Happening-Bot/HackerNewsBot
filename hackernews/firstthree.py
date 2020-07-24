@@ -1,7 +1,6 @@
 import aiohttp
 import discord
 
-
 # Accesses the item, which is possible since the ID of the item is passed in
 # Returns an embed that displays the caller's name and three news articles that
 # pertains to the user's preference.
@@ -16,15 +15,19 @@ class getFirstThree():
       embed.set_author(name=type + ' about ' + topic + ' for ' + str(ctx.message.author)) # X about Y for author
 
       for id in idList:
+
         async with session.get(
           BASE_URL + 'item/' + str(id) + '.json?print=pretty') as curr_id:
 
           curr_data = await curr_id.json()
 
-          if (curr_data.get('url')) and (curr_res < limit):
+          if (curr_res < limit) and (topic in curr_data.get('title').lower()):
             curr_res += 1
             embed.add_field(name=curr_data.get('title'), value=curr_data.get('url', 'no url'), inline=False)
             
+      if not embed.fields:
+        embed.add_field(name='No Results!', value='We were unable to find any matching stories...')
+
       await ctx.send(embed=embed)
 
   # jobstories, newstories, topstories, beststories, showstories

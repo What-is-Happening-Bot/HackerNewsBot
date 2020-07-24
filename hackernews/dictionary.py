@@ -1,5 +1,6 @@
-similarTerms = {
-  'cloud': [
+similarTerms = [
+    'cloud',
+    'crypto',
     'google drive',
     'onedrive',
     'one drive',
@@ -10,19 +11,15 @@ similarTerms = {
     'web service',
     'saas',
     'api',
-    'cloud',
     'iot',
     'cloud storage',
     'heroku',
     'firebase',
     'firestore',
     'paas',
-    'iaas'
-  ],
-  'crypto': [
+    'iaas',
     'bitcoin',
     'bit coin',
-    'crypto',
     'cryptopcurrency',
     'currency',
     'decentralized network',
@@ -38,6 +35,6 @@ similarTerms = {
     'open bazaar',
     'monero',
     'kraken',
-    'finex'
+    'finex',
+    'docker'
   ]
-}
