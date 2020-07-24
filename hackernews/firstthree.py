@@ -1,5 +1,6 @@
 import aiohttp
 import discord
+import re
 
 # Accesses the item, which is possible since the ID of the item is passed in
 # Returns an embed that displays the caller's name and three news articles that
@@ -21,7 +22,12 @@ class getFirstThree():
 
           curr_data = await curr_id.json()
 
-          if (curr_res < limit) and (topic in curr_data.get('title').lower()):
+          if not curr_data: 
+            continue
+
+          curr_title = re.findall('\\b'+topic+'\\b', curr_data.get('title').lower())
+
+          if (curr_res < limit) and curr_title:
             curr_res += 1
             embed.add_field(name=curr_data.get('title'), value=curr_data.get('url', 'no url'), inline=False)
             
