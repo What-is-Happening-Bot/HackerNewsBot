@@ -12,18 +12,20 @@ class HackerNews(commands.Cog):
   brief= 'Type in \'!help news\' to learn how to use the command',
   usage= '[jobstories, newstories, topstories, beststories, showstories] [your_topic]')
   async def news(self, ctx, *args):
+    news_arg = args[0].lower()
+    topic_arg = args[1].lower()
     if len(args)!=2:
       await ctx.send("Please input both item type and topic")
-    elif args[0].lower() not in ['jobstories', 'newstories', 'topstories', 'beststories', 'showstories']:
+    elif news_arg not in ['jobstories', 'newstories', 'topstories', 'beststories', 'showstories']:
       await ctx.send("Please input a supported item type")
     else: 
       async with ctx.channel.typing():
         BASE_URL = 'https://hacker-news.firebaseio.com/v0/'
         await ctx.send("Here you go...")
         getTypeInstance = getType()
-        typeIds = await getTypeInstance.get_stories(args[0].lower(), BASE_URL)
+        typeIds = await getTypeInstance.get_stories(news_arg, BASE_URL) # this needs to have topic_arg as well
         getFirstThreeInstance = getFirstThree()
-        await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL)
+        await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL, news_arg, topic_arg)
         
     
 def setup(bot):
