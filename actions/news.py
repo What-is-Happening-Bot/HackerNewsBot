@@ -26,7 +26,12 @@ class HackerNews(commands.Cog):
         typeIds = await getTypeInstance.get_stories(news_arg, BASE_URL) # this needs to have topic_arg as well
         getFirstThreeInstance = getFirstThree()
         await getFirstThreeInstance.firstThree(ctx, typeIds, BASE_URL, news_arg, topic_arg)
-        
+    
+  @commands.command(
+    brief= 'Displays the available story types'
+  )
+  async def storytypes(self, ctx):
+    await ctx.send("```jobstories, newstories, topstories, beststories, showstories```")
     
 def setup(bot):
   bot.add_cog(HackerNews(bot))
