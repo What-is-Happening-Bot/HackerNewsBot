@@ -35,3 +35,37 @@ Please follow the installation instructions on their respective websites._
 ```
 
 **3. Create a .env file (named ".env") and include your bot token**
+
+## Commands
+
+**1. !help news**
+
+- Assists users use the !news command
+
+```
+  !help news
+```
+
+**2. !storytypes**
+
+- Displays the available story types from Hacker News API
+
+```
+  !storytypes
+```
+
+**3. !topics**
+
+- Displays currently available search keywords
+
+```
+  !topics
+```
+
+## Screenshots
+
+**1. Bot running on Discord**
+![](/screenshots/bot.png)
+
+**2. Running a storytype + topics search**
+![](/screenshots/command.png)
