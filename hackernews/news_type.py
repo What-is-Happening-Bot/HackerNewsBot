@@ -9,11 +9,6 @@ class getType:
   # and turns it into a JSON. Then, it stores the first 100 IDs into a list, which
   # will be returned and then used to display the news.
 
-  # TO DO: Take into account the user's preference
-  # (Maybe use a thesaurus library or include our own for some topics)
-  # i.e cloud = google drive, onedrive, etc.
-  # i.e database = mongodb, mysql, postgresql
-
   async def get_stories(self, type, BASE_URL):
     async with aiohttp.ClientSession() as session:
       async with session.get(

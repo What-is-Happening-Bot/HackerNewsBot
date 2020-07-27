@@ -25,7 +25,7 @@ class getFirstThree():
           if not curr_data: 
             continue
 
-          curr_title = re.findall('\\b'+topic+'\\b', curr_data.get('title').lower())
+          curr_title = re.search('\\b'+topic+'\\b', curr_data.get('title').lower())
 
           if (curr_res < limit) and curr_title:
             curr_res += 1
