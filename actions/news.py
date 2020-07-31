@@ -5,6 +5,10 @@ from hackernews.firstthree import getFirstThree
 import discord
 from hackernews.dictionary import similarTerms
 
+# This file holds the code for bot commands.
+# The bot currently supports the following commands: 
+# [!help news] [!storytypes] [!topics]
+
 class HackerNews(commands.Cog):
   def __init__(self, bot):
     self.bot = bot

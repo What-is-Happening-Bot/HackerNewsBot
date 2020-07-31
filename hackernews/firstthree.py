@@ -3,7 +3,7 @@ import discord
 import re
 
 # Accesses the item, which is possible since the ID of the item is passed in
-# Returns an embed that displays the caller's name and three news articles that
+# Returns a color-coded embed that displays the caller's name and up to three stories that
 # pertains to the user's preference.
 
 class getFirstThree():
@@ -13,7 +13,7 @@ class getFirstThree():
 
     async with aiohttp.ClientSession() as session:
       embed = self.colorPicker(type)
-      embed.set_author(name=type + ' about ' + topic + ' for ' + str(ctx.message.author)) # X about Y for author
+      embed.set_author(name=type + ' about ' + topic + ' for ' + str(ctx.message.author))
 
       for id in idList:
 
@@ -36,7 +36,6 @@ class getFirstThree():
 
       await ctx.send(embed=embed)
 
-  # jobstories, newstories, topstories, beststories, showstories
   def colorPicker(self, type):
     if type == 'jobstories':
       return discord.Embed(colour=0x1F8B4C) # dark green
@@ -48,4 +47,3 @@ class getFirstThree():
       return discord.Embed(colour=0xF1C40F) # gold
     elif type == 'showstories':
       return discord.Embed(colour=0x34495E) # navy
-
