@@ -37,13 +37,13 @@ class getFirstThree():
       await ctx.send(embed=embed)
 
   def colorPicker(self, type):
-    if type == 'jobstories':
+    if type == 'job':
       return discord.Embed(colour=0x1F8B4C) # dark green
-    elif type == 'newstories':
+    elif type == 'new':
       return discord.Embed(colour=0xFD0061) # luminous vivid pink
-    elif type == 'topstories':
+    elif type == 'top':
       return discord.Embed(colour=0x1ABC9C) # aqua
-    elif type == 'beststories':
+    elif type == 'best':
       return discord.Embed(colour=0xF1C40F) # gold
-    elif type == 'showstories':
+    elif type == 'show':
       return discord.Embed(colour=0x34495E) # navy
