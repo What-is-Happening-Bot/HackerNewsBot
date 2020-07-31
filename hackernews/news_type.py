@@ -12,7 +12,7 @@ class getType:
   async def get_stories(self, type, BASE_URL):
     async with aiohttp.ClientSession() as session:
       async with session.get(
-        BASE_URL + type + '.json?print=pretty') as top_ids:
+        BASE_URL + type + 'stories.json?print=pretty') as top_ids:
         data = await top_ids.json()
         count = 0
         ITEM_ID = []

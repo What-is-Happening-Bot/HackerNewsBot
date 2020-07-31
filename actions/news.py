@@ -11,13 +11,13 @@ class HackerNews(commands.Cog):
 
   @commands.command(pass_context = True, 
   brief= 'Type in \'!help news\' to learn how to use the command',
-  usage= '[jobstories, newstories, topstories, beststories, showstories] [your_topic]')
+  usage= '[job, new, top, best, show] [your_topic]')
   async def news(self, ctx, *args):
     news_arg = args[0].lower()
     topic_arg = args[1].lower()
     if len(args)!=2:
       await ctx.send("Please input both item type and topic")
-    elif news_arg not in ['jobstories', 'newstories', 'topstories', 'beststories', 'showstories']:
+    elif news_arg not in ['job', 'new', 'top', 'best', 'show']:
       await ctx.send("Please input a supported item type... Try !help or !storytypes")
     elif topic_arg not in similarTerms:
       await ctx.send("Topic is currently not supported... Try !help or !topics")
@@ -34,7 +34,7 @@ class HackerNews(commands.Cog):
     brief= 'Displays the available story types'
   )
   async def storytypes(self, ctx):
-    await ctx.send("```jobstories, newstories, topstories, beststories, showstories```")
+    await ctx.send("```job, new, top, best, show```")
 
   @commands.command(
     brief= 'Displays the available search topics'
